@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10140f">
+  <title>Gustavo Paiva Laurindo — Desenvolvedor de Sistemas</title>
+  <meta name="description" content="Portfólio de Gustavo Paiva Laurindo, estudante de Desenvolvimento de Sistemas e Engenharia de Produção, interessado em software, dados e fundamentos da computação.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Gustavo Paiva Laurindo — Portfólio">
+  <meta property="og:description" content="Projetos, formação e interesses em desenvolvimento de sistemas, dados e computação.">
+  <meta property="og:locale" content="pt_BR">
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- Tailwind Play CDN: simples para hospedagem estática. Para um site maior, considere um build otimizado. -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            night: '#10140f',
+            panel: '#171d16',
+            panel2: '#20281e',
+            xbox: '#79b928',
+            mint: '#b6e86c',
+            muted: '#a4ada0'
+          },
+          fontFamily: {
+            sans: ['Inter', 'Segoe UI', 'system-ui', 'sans-serif'],
+            mono: ['Consolas', 'Monaco', 'monospace']
+          },
+          boxShadow: {
+            glow: '0 0 32px rgba(121,185,40,.12)'
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-night text-stone-100 antialiased selection:bg-xbox selection:text-night">
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <!-- Navegação -->
+  <header class="site-header sticky top-0 z-50 border-b border-white/10 bg-night/90 backdrop-blur-xl">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8" aria-label="Navegação principal">
+      <a href="#inicio" class="brand flex items-center gap-3" aria-label="Gustavo Paiva Laurindo, início">
+        <span class="brand-mark" aria-hidden="true">G<span>.</span></span>
+        <span class="hidden text-sm font-semibold tracking-wide sm:inline">GUSTAVO PAIVA LAURINDO</span>
+      </a>
+      <button id="menu-toggle" class="menu-toggle rounded-lg border border-white/15 p-2 text-sm md:hidden" type="button" aria-expanded="false" aria-controls="nav-links">
+        <span class="sr-only">Abrir menu</span>
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <div id="nav-links" class="nav-links">
+        <a href="#sobre">Sobre</a>
+        <a href="#tecnologias">Tecnologias</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#formacao">Formação</a>
+        <a href="#contato" class="nav-contact">Contato <span aria-hidden="true">↗</span></a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+    <!-- Apresentação -->
+    <section id="inicio" class="hero-section relative overflow-hidden">
+      <div class="hero-grid absolute inset-0" aria-hidden="true"></div>
+      <div class="mx-auto grid max-w-7xl items-center gap-12 px-5 py-20 md:grid-cols-[1.15fr_.85fr] md:py-28 lg:px-8">
+        <div class="relative z-10 reveal">
+          <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-xbox/30 bg-xbox/10 px-3 py-1.5 font-mono text-xs text-mint">
+            <span class="status-dot" aria-hidden="true"></span>
+            ESTUDANDO · CONSTRUINDO · EVOLUINDO
+          </div>
+          <p class="mb-3 font-mono text-sm text-muted">Olá, eu sou</p>
+          <h1 class="max-w-3xl text-4xl font-semibold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
+            Gustavo Paiva<br><span class="text-xbox">Laurindo.</span>
+          </h1>
+          <p class="mt-6 max-w-2xl text-lg leading-relaxed text-stone-300 sm:text-xl">
+            Estudante de Desenvolvimento de Sistemas, interessado em criar software útil e entender a lógica por trás da tecnologia.
+          </p>
+          <p class="mt-4 max-w-xl leading-relaxed text-muted">
+            Atualmente, estou desenvolvendo minha base em programação e colaborando em uma plataforma de estudos de Cálculo I na UERJ.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a class="button button-primary" href="#projetos">Explorar projetos <span aria-hidden="true">↓</span></a>
+            <a class="button button-secondary" href="https://github.com/GusShard" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="mt-10 flex flex-wrap gap-x-6 gap-y-2 font-mono text-xs text-muted">
+            <span><span class="text-xbox">●</span> Resende, RJ — Brasil</span>
+            <span><span class="text-xbox">●</span> Em busca da primeira oportunidade em TI</span>
+          </div>
+        </div>
+
+        <!-- Painel inspirado em interfaces de console; sem imagem pessoal inventada. -->
+        <div class="relative z-10 reveal reveal-delay-1">
+          <div class="console-panel mx-auto max-w-md">
+            <div class="console-topbar">
+              <span class="flex items-center gap-2"><span class="console-light"></span><span class="font-mono text-[11px] tracking-widest">PROFILE / 001</span></span>
+              <span class="font-mono text-[10px] text-stone-500">SYSTEM ONLINE</span>
+            </div>
+            <div class="console-content">
+              <div class="avatar-placeholder" role="img" aria-label="Espaço reservado para o avatar pessoal do Xbox; nenhuma imagem foi fornecida">
+                <div class="avatar-orbit orbit-one"></div>
+                <div class="avatar-orbit orbit-two"></div>
+                <div class="avatar-silhouette" aria-hidden="true">
+                  <span class="avatar-head"></span><span class="avatar-body"></span>
+                </div>
+                <span class="avatar-label">AVATAR SLOT</span>
+              </div>
+              <div class="mt-6 flex items-start justify-between gap-4">
+                <div>
+                  <p class="font-mono text-[10px] uppercase tracking-[.2em] text-muted">Player profile</p>
+                  <h2 class="mt-1 text-xl font-semibold">Gustavo</h2>
+                  <p class="mt-1 text-sm text-muted">Developer in progress</p>
+                </div>
+                <div class="rank-badge" aria-label="Nível inicial">LVL<br><strong>01</strong></div>
+              </div>
+              <div class="mt-6 space-y-3">
+                <div>
+                  <div class="mb-1.5 flex justify-between font-mono text-[11px]"><span class="text-stone-300">SOFTWARE</span><span class="text-mint">LEARNING</span></div>
+                  <div class="meter"><span style="width: 42%"></span></div>
+                </div>
+                <div>
+                  <div class="mb-1.5 flex justify-between font-mono text-[11px]"><span class="text-stone-300">DATA & MATH</span><span class="text-mint">EXPLORING</span></div>
+                  <div class="meter"><span style="width: 31%"></span></div>
+                </div>
+              </div>
+              <div class="mt-6 border-t border-white/10 pt-4 font-mono text-xs text-muted">
+                <span class="text-xbox">></span> status: building fundamentals<span class="cursor-blink">_</span>
+              </div>
+            </div>
+          </div>
+          <p class="mt-3 text-center font-mono text-[10px] text-stone-600">INTERFACE CONCEPT // PERSONAL DASHBOARD</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sobre -->
+    <section id="sobre" class="section-shell mx-auto max-w-7xl px-5 py-20 lg:px-8">
+      <div class="section-heading reveal">
+        <p class="section-kicker">01 / SOBRE MIM</p>
+        <h2>Curiosidade que vira <span class="text-xbox">projeto.</span></h2>
+      </div>
+      <div class="grid gap-8 md:grid-cols-[1.15fr_.85fr]">
+        <div class="reveal">
+          <p class="text-lg leading-relaxed text-stone-200">
+            Meu interesse por tecnologia começou pela curiosidade de explorar dispositivos, sistemas e possibilidades por conta própria. Com o tempo, isso virou vontade de entender como as coisas funcionam e de criar soluções para problemas reais.
+          </p>
+          <p class="mt-5 leading-relaxed text-muted">
+            Hoje, concilio Engenharia de Produção na UERJ com o técnico em Desenvolvimento de Sistemas no SENAI. Quero fortalecer meus fundamentos de programação e computação, desenvolver projetos próprios e aprender a aplicar tecnologia e dados de forma útil.
+          </p>
+          <p class="mt-5 leading-relaxed text-muted">
+            Tenho especial interesse em algoritmos, sistemas e, no longo prazo, Inteligência Artificial e Machine Learning. Por enquanto, meu foco é aprender construindo, documentando decisões e evoluindo projeto por projeto.
+          </p>
+        </div>
+        <div class="reveal reveal-delay-1 grid gap-3 sm:grid-cols-2">
+          <article class="info-tile">
+            <span class="tile-icon" aria-hidden="true">⌘</span>
+            <h3>Aprender por dentro</h3>
+            <p>Entender o porquê das decisões técnicas, não apenas reproduzir código.</p>
+          </article>
+          <article class="info-tile">
+            <span class="tile-icon" aria-hidden="true">↗</span>
+            <h3>Resolver problemas</h3>
+            <p>Usar tecnologia para criar soluções práticas e melhorar processos.</p>
+          </article>
+          <article class="info-tile">
+            <span class="tile-icon" aria-hidden="true">∑</span>
+            <h3>Matemática & dados</h3>
+            <p>Explorar a conexão entre computação, análise e raciocínio quantitativo.</p>
+          </article>
+          <article class="info-tile">
+            <span class="tile-icon" aria-hidden="true">⌁</span>
+            <h3>Evolução contínua</h3>
+            <p>Transformar estudos em projetos demonstráveis e conhecimento sólido.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tecnologias -->
+    <section id="tecnologias" class="section-alt border-y border-white/5">
+      <div class="section-shell mx-auto max-w-7xl px-5 py-20 lg:px-8">
+        <div class="section-heading reveal">
+          <p class="section-kicker">02 / STACK ATUAL</p>
+          <h2>Tecnologias em <span class="text-xbox">construção.</span></h2>
+          <p class="section-intro">Uma visão honesta do que venho utilizando e estudando. Não é uma lista de domínio profissional.</p>
+        </div>
+        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <article class="tech-card reveal">
+            <div class="tech-card-head"><span class="tech-symbol">PHP</span><span class="tech-state">EM ESTUDO</span></div>
+            <h3>PHP</h3><p>Fundamentos de backend e desenvolvimento de aplicações web.</p>
+          </article>
+          <article class="tech-card reveal reveal-delay-1">
+            <div class="tech-card-head"><span class="tech-symbol">JS</span><span class="tech-state">EM ESTUDO</span></div>
+            <h3>JavaScript</h3><p>Interatividade no navegador e fundamentos de programação.</p>
+          </article>
+          <article class="tech-card reveal reveal-delay-2">
+            <div class="tech-card-head"><span class="tech-symbol">HTML</span><span class="tech-state">EM PRÁTICA</span></div>
+            <h3>HTML & CSS</h3><p>Estruturação de páginas e construção de interfaces web.</p>
+          </article>
+          <article class="tech-card reveal">
+            <div class="tech-card-head"><span class="tech-symbol">SQL</span><span class="tech-state">EM PRÁTICA</span></div>
+            <h3>MySQL</h3><p>Modelagem e persistência de dados relacionais.</p>
+          </article>
+          <article class="tech-card reveal reveal-delay-1">
+            <div class="tech-card-head"><span class="tech-symbol">PY</span><span class="tech-state">BÁSICO</span></div>
+            <h3>Python</h3><p>Contato inicial aplicado a análise e visualização de dados.</p>
+          </article>
+          <article class="tech-card reveal reveal-delay-2">
+            <div class="tech-card-head"><span class="tech-symbol">L</span><span class="tech-state">EXPERIÊNCIA INICIAL</span></div>
+            <h3>Laravel & Streamlit</h3><p>Contato com Laravel e criação de uma dashboard usando Streamlit.</p>
+          </article>
+        </div>
+        <div class="mt-5 flex flex-wrap gap-2 reveal">
+          <span class="skill-chip">Git</span><span class="skill-chip">GitHub</span><span class="skill-chip">VS Code</span><span class="skill-chip">Pensamento analítico</span><span class="skill-chip">Resolução de problemas</span><span class="skill-chip">Otimização de processos</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projetos -->
+    <section id="projetos" class="section-shell mx-auto max-w-7xl px-5 py-20 lg:px-8">
+      <div class="section-heading reveal">
+        <p class="section-kicker">03 / PROJETOS SELECIONADOS</p>
+        <h2>Aprendizado em <span class="text-xbox">movimento.</span></h2>
+        <p class="section-intro">Projetos que representam meu momento atual de aprendizado — do desenvolvimento de uma plataforma educacional à exploração de dados.</p>
+      </div>
+      <div class="project-grid">
+        <article class="project-card project-featured reveal">
+          <div class="project-art calculus-art" aria-hidden="true">
+            <div class="art-topline"><span>LEARNING PLATFORM</span><span>PROJECT_01</span></div>
+            <div class="math-mark">∫ <span>f(x)</span> dx</div>
+            <div class="mini-progress"><span></span></div>
+            <div class="art-bottomline"><span>CALCULO SEM BARREIRAS</span><span class="art-dot"></span></div>
+          </div>
+          <div class="project-copy">
+            <div class="mb-3 flex flex-wrap items-center gap-2"><span class="project-status"><span></span> Em desenvolvimento</span><span class="project-type">Educação / Web</span></div>
+            <h3>Cálculo sem Barreiras</h3>
+            <p>Plataforma de estudos de Cálculo inspirada em mecânicas de aprendizagem gamificada. A proposta é incentivar a constância nos estudos e apoiar estudantes na prática da disciplina.</p>
+            <div class="project-tags"><span>PHP</span><span>HTML</span><span>CSS</span><span>MySQL</span></div>
+            <p class="project-note">A primeira versão está sendo planejada com PHP e MySQL; uma possível migração para Laravel está prevista para uma etapa futura.</p>
+            <span class="project-link-disabled">Em desenvolvimento — sem demonstração pública informada</span>
+          </div>
+        </article>
+
+        <article class="project-card reveal reveal-delay-1">
+          <div class="project-art data-art" aria-hidden="true">
+            <div class="art-topline"><span>DATA EXPLORER</span><span>PROJECT_02</span></div>
+            <div class="chart-visual">
+              <div class="chart-bars"><i style="height:34%"></i><i style="height:52%"></i><i style="height:44%"></i><i style="height:70%"></i><i style="height:61%"></i><i style="height:88%"></i><i style="height:76%"></i></div>
+              <div class="chart-axis"></div>
+            </div>
+            <div class="art-bottomline"><span>SALARY DATA ANALYSIS</span><span class="art-dot"></span></div>
+          </div>
+          <div class="project-copy">
+            <div class="mb-3 flex flex-wrap items-center gap-2"><span class="project-status project-status-complete"><span></span> Projeto de estudo</span><span class="project-type">Dados / Dashboard</span></div>
+            <h3>Dashboard — Data Analysis Salaries</h3>
+            <p>Dashboard interativa para explorar salários em funções relacionadas a dados por ano, senioridade, tipo de contrato e tamanho da empresa. Desenvolvida durante a Imersão de Dados com Python da Alura.</p>
+            <div class="project-tags"><span>Python</span><span>Streamlit</span><span>Análise de dados</span></div>
+            <div class="project-actions">
+              <a class="text-link" href="https://github.com/GusShard/Dashboard-data-analysis-salaries" target="_blank" rel="noopener noreferrer">Ver repositório <span aria-hidden="true">↗</span></a>
+              <a class="text-link" href="https://www.linkedin.com/safety/go/?url=https%3A%2F%2Flnkd.in%2FdppXGX2r&urlhash=jt_u&mt=Q73qGWXEM6dR8OA_0XhYoCGYjUcz0GPbRKz18In_8u5Z4Q7OHnrmlkjIhLqpWcIaV1ZqT93vybGA4-atxrtnBZ4IEDAi0Z3Y_aNa0QhL6yHf2Lx6j5ijGONxJQo&isSdui=true&lipi=urn%3Ali%3Apage%3Ad_flagship3_detail_base%3BaS8ntzAcQ0GvRq3oVM14UQ%3D%3D" target="_blank" rel="noopener noreferrer">Demonstração <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="mt-8 flex flex-wrap items-center justify-between gap-4 border-t border-white/10 pt-6 reveal">
+        <p class="text-sm text-muted">Mais projetos serão adicionados conforme forem concluídos e documentados.</p>
+        <a class="text-link" href="https://github.com/GusShard?tab=repositories" target="_blank" rel="noopener noreferrer">Todos os repositórios <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+
+    <!-- Formação e experiência -->
+    <section id="formacao" class="section-alt border-y border-white/5">
+      <div class="section-shell mx-auto max-w-7xl px-5 py-20 lg:px-8">
+        <div class="section-heading reveal">
+          <p class="section-kicker">04 / FORMAÇÃO</p>
+          <h2>Construindo a <span class="text-xbox">base.</span></h2>
+        </div>
+        <div class="grid gap-12 md:grid-cols-2">
+          <div class="reveal">
+            <h3 class="mb-6 flex items-center gap-3 text-lg font-semibold"><span class="section-icon">▤</span> Formação acadêmica</h3>
+            <div class="timeline">
+              <article class="timeline-item">
+                <span class="timeline-marker"></span>
+                <p class="timeline-date">EM ANDAMENTO</p>
+                <h4>Engenharia de Produção</h4>
+                <p class="timeline-place">UERJ — Faculdade de Tecnologia, Resende</p>
+                <p class="timeline-description">Formação com contato com matemática, processos e análise de problemas.</p>
+              </article>
+              <article class="timeline-item">
+                <span class="timeline-marker"></span>
+                <p class="timeline-date">EM ANDAMENTO</p>
+                <h4>Técnico em Desenvolvimento de Sistemas</h4>
+                <p class="timeline-place">SENAI</p>
+                <p class="timeline-description">Estudos de programação, desenvolvimento web e bancos de dados.</p>
+              </article>
+            </div>
+          </div>
+          <div class="reveal reveal-delay-1">
+            <h3 class="mb-6 flex items-center gap-3 text-lg font-semibold"><span class="section-icon">⌁</span> Cursos complementares</h3>
+            <div class="timeline">
+              <article class="timeline-item">
+                <span class="timeline-marker"></span>
+                <p class="timeline-date">FORMAÇÃO COMPLEMENTAR</p>
+                <h4>Google Data Analytics</h4>
+                <p class="timeline-place">Google</p>
+              </article>
+              <article class="timeline-item">
+                <span class="timeline-marker"></span>
+                <p class="timeline-date">IMERSÃO</p>
+                <h4>Imersão Dados com Python</h4>
+                <p class="timeline-place">Alura</p>
+              </article>
+            </div>
+            <div class="experience-note mt-8 rounded-xl border border-xbox/20 bg-xbox/5 p-5">
+              <p class="font-mono text-xs uppercase tracking-widest text-mint">Próximo passo</p>
+              <h4 class="mt-2 font-semibold">Primeira oportunidade em tecnologia</h4>
+              <p class="mt-2 text-sm leading-relaxed text-muted">Busco uma oportunidade de estágio ou posição inicial em TI para contribuir com projetos reais, aprender com outras pessoas da área e transformar minha formação em experiência prática.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="section-shell mx-auto max-w-7xl px-5 py-20 lg:px-8">
+      <div class="contact-panel reveal">
+        <div class="contact-glow" aria-hidden="true"></div>
+        <div class="relative z-10 max-w-2xl">
+          <p class="section-kicker">05 / CONTATO</p>
+          <h2 class="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">Vamos conversar sobre <span class="text-xbox">tecnologia?</span></h2>
+          <p class="mt-4 leading-relaxed text-muted">Estou aberto a oportunidades de início de carreira, colaboração em projetos e conversas sobre desenvolvimento de sistemas e computação.</p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a class="button button-primary" href="mailto:gustavopaiva.contact@gmail.com">Enviar e-mail <span aria-hidden="true">↗</span></a>
+            <a class="button button-secondary" href="https://www.linkedin.com/in/gustavo-paiva-laurindo-98b12b384" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+            <a class="button button-secondary" href="https://github.com/GusShard" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+        <div class="contact-terminal relative z-10 hidden lg:block" aria-label="Painel decorativo de terminal">
+          <p><span class="text-xbox">$</span> whoami</p>
+          <p class="pl-4 text-stone-300">gustavo-paiva-laurindo</p>
+          <p class="mt-3"><span class="text-xbox">$</span> focus --current</p>
+          <p class="pl-4 text-stone-300">software / learning / problem-solving</p>
+          <p class="mt-3"><span class="text-xbox">$</span> open_to_opportunities</p>
+          <p class="pl-4 text-mint">true<span class="cursor-blink">_</span></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-white/10">
+    <div class="mx-auto flex max-w-7xl flex-col gap-3 px-5 py-6 text-sm text-muted sm:flex-row sm:items-center sm:justify-between lg:px-8">
+      <p>© <span id="current-year">2026</span> Gustavo Paiva Laurindo</p>
+      <p class="font-mono text-xs">FEITO COM CURIOSIDADE <span class="text-xbox">●</span> E CÓDIGO</p>
+      <a class="back-top" href="#inicio">Voltar ao início ↑</a>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
