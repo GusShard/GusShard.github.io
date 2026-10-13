@@ -1,61 +1,147 @@
+
 # Portfólio — Gustavo Paiva Laurindo
 
-Portfólio pessoal estático, criado com HTML5, Tailwind CSS, CSS complementar e JavaScript. O visual combina uma interface escura retrofuturista com referências discretas a dashboards de consoles, usando verde como cor de destaque.
+Portfólio pessoal no estilo **dashboard do Xbox 360 (Metro, 2010)**.
+Site estático em HTML, Tailwind CSS (via CDN), CSS customizado e JavaScript puro.
+Sem build, sem backend, sem dependências de servidor.
 
-## Estrutura
+---
 
-```text
+## 🎮 Sobre o projeto
+
+Este portfólio foi construído com a identidade visual do dashboard
+Metro do Xbox 360:
+
+- Barra superior com abas horizontais (início, projetos, tecnologias...)
+- Blocos Metro com reflexo de vidro e destaque verde no foco
+- Avatar central com halo suave
+- Rodapé com botões de controle (Ⓐ Ⓑ Ⓧ Ⓨ)
+- Navegação por **setas do teclado**, **Enter** e **Esc**
+
+É um site estático, publicado via **GitHub Pages**.
+
+---
+
+## 🗂️ Estrutura de arquivos
+
+```
 /
 ├── index.html
-├── README.md
-└── assets/
-    ├── css/
-    │   └── style.css
-    ├── js/
-    │   └── main.js
-    └── images/
-        └── favicon.svg
+│
+├── assets/
+│   ├── css/
+│   │   └── style.css
+│   │
+│   ├── js/
+│   │   └── main.js
+│   │
+│   └── images/
+│       ├── avatar.png          ← avatar do 360 (fundo transparente)
+│       ├── favicon.svg         ← ícone da aba do navegador
+│       └── projects/
+│           ├── calculo-sem-barreiras.png   (opcional)
+│           └── dashboard-salaries.png      (opcional)
+│
+└── README.md
 ```
 
-## Executar localmente
+---
 
-1. Baixe ou clone este repositório.
-2. Abra `index.html` no navegador.
-3. Para testar a mesma estrutura usada na hospedagem, você também pode abrir a pasta com a extensão Live Server do VS Code.
+## ⚙️ Como rodar localmente
 
-O Tailwind CSS é carregado pelo Play CDN para manter a configuração simples. Essa opção é conveniente para um portfólio estático pequeno; para um projeto de produção maior, o recomendado é configurar um processo de build e publicar o CSS compilado.
+1. Clone o repositório:
+   git clone https://github.com/GusShard/SEU-REPO.git
+   cd SEU-REPO
 
-## Publicar no GitHub Pages
+2. Abra o `index.html` direto no navegador (duplo clique).
 
-1. Crie um repositório no GitHub, por exemplo `portfolio`.
-2. Envie os arquivos mantendo a estrutura de pastas.
-3. No repositório, abra **Settings → Pages**.
-4. Em **Build and deployment**, selecione **Deploy from a branch**.
-5. Escolha a branch principal (geralmente `main`) e a pasta `/(root)`.
-6. Salve e aguarde o GitHub Pages publicar o site.
+   **Não precisa de servidor.** Não precisa instalar nada.
+   Como o Tailwind é carregado via CDN, é necessário estar online
+   na primeira carga.
 
-O arquivo de entrada deve permanecer na raiz como `index.html`.
+---
 
-## Personalização
+## 🚀 Publicar no GitHub Pages
 
-- **Avatar:** o painel inicial usa uma ilustração CSS temporária. Se quiser usar seu avatar real, coloque a imagem em `assets/images/` e substitua o bloco `.avatar-placeholder` em `index.html` por uma imagem com texto alternativo.
-- **Favicon:** o arquivo `assets/images/favicon.svg` pode ser substituído por outro ícone próprio.
-- **Projetos:** confirme os links, o estado atual e as tecnologias antes de publicar. O projeto “Cálculo sem Barreiras” aparece como em desenvolvimento e não possui link público informado.
-- **Formação:** atualize os nomes dos cursos e o status quando sua situação mudar.
-- **Demonstração da dashboard:** o link foi mantido conforme fornecido no material original; vale confirmar se ainda é o endereço público correto.
+1. Crie um repositório novo no GitHub (ex: `portfolio`).
+2. Suba os arquivos:
 
-## Tecnologias usadas no portfólio
+   git init
+   git add .
+   git commit -m "Portfólio estilo Xbox 360 Metro"
+   git branch -M main
+   git remote add origin https://github.com/GusShard/portfolio.git
+   git push -u origin main
 
-- HTML5 semântico
-- Tailwind CSS via CDN
-- CSS3
-- JavaScript moderno sem framework
-- SVG para favicon
+3. No GitHub: **Settings → Pages**
+4. Em **Source**, selecione:
+   - Branch: `main`
+   - Folder: `/ (root)`
+5. Clique em **Save**.
+6. Espere 1–2 minutos. O site ficará em:
+   https://gusshard.github.io/portfolio/
 
-## Acessibilidade e responsividade
+---
 
-O site inclui navegação semântica, link para pular ao conteúdo, foco visível, menu móvel, textos alternativos e suporte à preferência de movimento reduzido do sistema operacional.
+## ⌨️ Atalhos de navegação
 
-## Observação
+| Tecla | Ação |
+|---|---|
+| ← → ↑ ↓ | Navegar entre os blocos |
+| Enter / Espaço | Abrir bloco selecionado (botão Ⓐ) |
+| Esc | Voltar para o início (botão Ⓑ) |
 
-O conteúdo apresenta tecnologias como em estudo quando apropriado e não afirma experiência profissional formal. Revise todas as informações pessoais e links antes da publicação.
+Os botões do rodapé também funcionam por clique/toque:
+
+| Botão | Ação |
+|---|---|
+| Ⓐ Selecionar | Abre o bloco em foco |
+| Ⓑ Voltar | Volta para a tela inicial |
+| Ⓧ Aparência | Alterna entre tema escuro e claro |
+| Ⓨ Início | Volta para a tela inicial |
+
+---
+
+## 🎨 Personalização rápida
+
+### Trocar o avatar
+Substitua `assets/images/avatar.png` pelo seu avatar (PNG com fundo
+transparente). Recomendado: 500×700 px ou maior.
+
+### Trocar a gamertag
+Em `index.html`, procure por:
+
+<span class="gamertag-name">GusShard</span>
+
+Troque pelo que quiser.
+
+### Trocar as cores
+Todas as cores estão em variáveis CSS no topo de
+`assets/css/style.css`, na seção `:root`.
+
+### Adicionar um novo bloco Metro
+Em `index.html`, na seção `#tela-inicial`, copie um `<button class="metro-tile">`
+e ajuste o `data-open` para o id da nova tela.
+
+---
+
+## ✅ Checklist de publicação
+
+- [ ] Avatar salvo em `assets/images/avatar.png` (PNG transparente)
+- [ ] Favicon salvo em `assets/images/favicon.svg`
+- [ ] `index.html` abre localmente sem erro no console (F12)
+- [ ] Navegação por setas funciona
+- [ ] Botões do rodapé funcionam
+- [ ] Tema claro funciona (botão Ⓧ)
+- [ ] Testado no celular (layout responsivo)
+- [ ] Repositório criado no GitHub
+- [ ] GitHub Pages ativado em Settings → Pages
+- [ ] Site acessível em `https://gusshard.github.io/portfolio/`
+
+---
+
+## 📬 Contato
+
+- GitHub: github.com/GusShard
+- LinkedIn: linkedin.com/in/gustavo-paiva-laurindo-98b12b384
+- E-mail: gustavopaiva.contact@gmail.com
