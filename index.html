@@ -5,79 +5,49 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Portfólio de Gustavo Paiva Laurindo — estudante de Desenvolvimento de Sistemas e Engenharia de Produção. Dashboard interativa no estilo Xbox 360." />
   <meta name="author" content="Gustavo Paiva Laurindo" />
-
-  <!-- Open Graph básico -->
   <meta property="og:title" content="Gustavo Paiva Laurindo — Portfólio" />
   <meta property="og:description" content="Estudante de Desenvolvimento de Sistemas e Engenharia de Produção. Projetos, tecnologias e contato." />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="pt_BR" />
-
   <title>Gustavo Paiva Laurindo — Portfólio</title>
-
-  <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
-
-  <!-- Tailwind CSS via CDN (compatível com GitHub Pages, sem build) -->
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Fonte estilo Xbox 360 (Segoe UI é a mais próxima disponível livre) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@300;400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-
-  <!-- CSS customizado (identidade visual Xbox 360 Metro) -->
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 
 <body class="xbox-body">
 
-  <!-- ============================================================
-       BARRA SUPERIOR — réplica do header do dashboard Metro (2010)
-       ============================================================ -->
   <header class="xbox-topbar" role="banner">
-    <!-- Avatar mini no canto superior esquerdo -->
-    <div class="topbar-avatar" aria-hidden="true">
-      <img src="assets/images/avatar.png" alt="" />
-    </div>
-
-    <!-- Abas horizontais de navegação (bing, home, social, games...) -->
+    <div class="topbar-spacer" aria-hidden="true"></div>
     <nav class="topbar-tabs" aria-label="Navegação principal">
       <button class="topbar-tab" data-target="tela-busca" type="button">busca</button>
       <button class="topbar-tab is-active" data-target="tela-inicial" type="button">início</button>
-      <button class="topbar-tab" data-target="tela-social" type="button">social</button>
+      <button class="topbar-tab" data-target="tela-sobre" type="button">sobre</button>
       <button class="topbar-tab" data-target="tela-projetos" type="button">projetos</button>
       <button class="topbar-tab" data-target="tela-tecnologias" type="button">tecnologias</button>
       <button class="topbar-tab" data-target="tela-formacao" type="button">formação</button>
       <button class="topbar-tab" data-target="tela-contato" type="button">contato</button>
       <button class="topbar-tab" data-target="tela-config" type="button">configurações</button>
     </nav>
-
-    <!-- Bloco de gamertag no canto superior direito -->
     <div class="topbar-gamertag">
       <div class="gamertag-text">
         <span class="gamertag-label">GAMERTAG:</span>
         <span class="gamertag-name">GusShard</span>
       </div>
       <div class="gamertag-avatar">
-        <img src="assets/images/avatar.png" alt="Avatar de GusShard" />
+        <img src="assets/images/avatar-head.png" alt="Avatar de GusShard" />
       </div>
     </div>
   </header>
 
-  <!-- ============================================================
-       PALCO PRINCIPAL — onde as telas ficam sobrepostas
-       ============================================================ -->
   <main class="xbox-stage" role="main">
 
-    <!-- ============================================================
-         TELA INICIAL — dashboard com blocos Metro
-         ============================================================ -->
     <section id="tela-inicial" class="xbox-screen is-active" aria-label="Tela inicial">
-
-      <!-- Coluna esquerda — 3 blocos verticais -->
       <div class="metro-col metro-col-left">
-
-        <button class="metro-tile tile-gray" data-open="tela-sobre" type="button">
+        <button class="metro-tile tile-green" data-open="tela-sobre" type="button">
           <div class="tile-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
               <circle cx="12" cy="8" r="3.4" />
@@ -86,7 +56,6 @@
           </div>
           <span class="tile-label">Sobre mim</span>
         </button>
-
         <button class="metro-tile tile-gray" data-open="tela-tecnologias" type="button">
           <div class="tile-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
@@ -95,7 +64,6 @@
           </div>
           <span class="tile-label">Tecnologias</span>
         </button>
-
         <button class="metro-tile tile-gray" data-open="tela-contato" type="button">
           <div class="tile-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
@@ -107,14 +75,9 @@
         </button>
       </div>
 
-      <!-- Coluna central — avatar grande + nome -->
       <div class="metro-col metro-col-center">
         <div class="avatar-stage">
-          <img
-            src="assets/images/avatar.png"
-            alt="Avatar Xbox 360 de Gustavo Paiva Laurindo"
-            class="avatar-big"
-          />
+          <img src="assets/images/avatar.png" alt="Avatar Xbox 360 de Gustavo Paiva Laurindo" class="avatar-big" />
         </div>
         <div class="avatar-caption">
           <h1 class="avatar-name">Gustavo Paiva Laurindo</h1>
@@ -122,9 +85,7 @@
         </div>
       </div>
 
-      <!-- Coluna direita — 3 blocos verticais -->
       <div class="metro-col metro-col-right">
-
         <button class="metro-tile tile-green" data-open="tela-projetos" type="button">
           <div class="tile-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
@@ -134,7 +95,6 @@
           </div>
           <span class="tile-label">Projetos</span>
         </button>
-
         <button class="metro-tile tile-gray" data-open="tela-formacao" type="button">
           <div class="tile-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
@@ -144,7 +104,6 @@
           </div>
           <span class="tile-label">Formação</span>
         </button>
-
         <button class="metro-tile tile-gray" data-open="tela-habilidades" type="button">
           <div class="tile-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
@@ -155,79 +114,49 @@
         </button>
       </div>
 
-      <!-- Rodapé de dicas de navegação (dentro da tela inicial) -->
       <div class="screen-hint">
         <span><kbd>←</kbd><kbd>→</kbd><kbd>↑</kbd><kbd>↓</kbd> navegar</span>
         <span><kbd>Enter</kbd> abrir</span>
       </div>
     </section>
 
-    <!-- ============================================================
-         TELA SOBRE MIM
-         ============================================================ -->
     <section id="tela-sobre" class="xbox-screen screen-content" aria-label="Sobre mim" hidden>
       <div class="content-shell">
         <header class="content-head">
           <h2 class="content-title">Sobre mim</h2>
           <button class="btn-back" data-back type="button" aria-label="Voltar">voltar</button>
         </header>
-
         <div class="content-grid">
           <article class="content-card">
             <h3>Quem sou</h3>
-            <p>
-              Sou Gustavo Paiva Laurindo, moro em Resende (RJ) e estou construindo
-              minha formação entre a engenharia e o desenvolvimento de sistemas.
-              Curso Engenharia de Produção na UERJ e, em paralelo, o técnico em
-              Desenvolvimento de Sistemas pelo SENAI.
-            </p>
+            <p>Sou Gustavo Paiva Laurindo, moro em Resende (RJ) e estou construindo minha formação entre a engenharia e o desenvolvimento de sistemas. Curso Engenharia de Produção na UERJ e, em paralelo, o técnico em Desenvolvimento de Sistemas pelo SENAI.</p>
           </article>
-
           <article class="content-card">
             <h3>Como penso</h3>
-            <p>
-              Tenho curiosidade por entender como as coisas funcionam por dentro —
-              não me contento com o superficial. Gosto de descobrir o porquê das
-              decisões técnicas antes de aplicá-las.
-            </p>
+            <p>Tenho curiosidade por entender como as coisas funcionam, não me contento com o superficial. Gosto de descobrir o porquê das decisões técnicas antes de aplicá-las. Sempre fui curioso com tecnologia — desde pequeno procurando soluções, mexendo em coisas que não entendia completamente, aprendendo na prática. Isso não mudou: só mudou a profundidade do que quero entender.</p>
           </article>
-
           <article class="content-card">
             <h3>Onde quero chegar</h3>
-            <p>
-              Quero construir uma base sólida em programação, algoritmos e análise
-              de dados, com objetivo de aprofundar em IA, Machine Learning e
-              sistemas. Uso projetos próprios como forma de aprender e mostrar
-              o que estou construindo.
-            </p>
+            <p>Quero construir uma base sólida em programação. Tenho interesse em áreas como back-end, redes, IA e análise de dados, com objetivo de aprofundar em Machine Learning e sistemas. Uso projetos próprios como forma de aprender e mostrar o que estou construindo.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- ============================================================
-         TELA PROJETOS
-         ============================================================ -->
     <section id="tela-projetos" class="xbox-screen screen-content" aria-label="Projetos" hidden>
       <div class="content-shell">
         <header class="content-head">
           <h2 class="content-title">Projetos</h2>
           <button class="btn-back" data-back type="button" aria-label="Voltar">voltar</button>
         </header>
-
         <div class="content-grid content-grid-2">
-
           <article class="project-card">
             <div class="project-thumb thumb-green">
               <span class="project-status">em desenvolvimento</span>
             </div>
             <div class="project-body">
               <h3>Cálculo sem Barreiras</h3>
-              <p>
-                Plataforma de estudos de Cálculo inspirada no Duolingo. Busca
-                aumentar o engajamento dos estudantes e reduzir a baixa
-                frequência nos estudos, que impacta a média das turmas.
-              </p>
+              <p>Plataforma de estudos de Cálculo inspirada no Duolingo. Busca aumentar o engajamento dos estudantes e reduzir a baixa frequência nos estudos, que impacta a média das turmas.</p>
               <ul class="tag-list">
                 <li>PHP</li>
                 <li>MySQL</li>
@@ -237,63 +166,44 @@
               </ul>
             </div>
           </article>
-
           <article class="project-card">
             <div class="project-thumb thumb-blue">
               <span class="project-status">concluído</span>
             </div>
             <div class="project-body">
               <h3>Dashboard — Análise de Salários</h3>
-              <p>
-                Dashboard interativo para análise de salários em cargos de dados.
-                Permite explorar tendências por ano, senioridade, tipo de contrato
-                e porte da empresa. Construído durante a Imersão de Dados com
-                Python da Alura.
-              </p>
+              <p>Dashboard interativo para análise de salários em cargos de dados. Permite explorar tendências por ano, senioridade, tipo de contrato e porte da empresa. Construído durante a Imersão de Dados com Python da Alura.</p>
               <ul class="tag-list">
                 <li>Python</li>
                 <li>Streamlit</li>
                 <li>Análise de Dados</li>
               </ul>
               <div class="project-links">
-                <a
-                  href="https://github.com/GusShard/Dashboard-data-analysis-salaries"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="btn-link"
-                >
-                  Ver no GitHub
-                </a>
+                <a href="https://github.com/GusShard/Dashboard-data-analysis-salaries" target="_blank" rel="noopener noreferrer" class="btn-link">Ver no GitHub</a>
               </div>
             </div>
           </article>
-
         </div>
       </div>
     </section>
 
-    <!-- ============================================================
-         TELA TECNOLOGIAS
-         ============================================================ -->
     <section id="tela-tecnologias" class="xbox-screen screen-content" aria-label="Tecnologias" hidden>
       <div class="content-shell">
         <header class="content-head">
           <h2 class="content-title">Tecnologias</h2>
           <button class="btn-back" data-back type="button" aria-label="Voltar">voltar</button>
         </header>
-
         <div class="tech-grid">
           <div class="tech-card">
             <h3>Linguagens</h3>
             <ul class="tech-list">
-              <li><span>PHP</span><em>familiaridade</em></li>
+              <li><span>PHP</span><em></em></li>
               <li><span>JavaScript</span><em>familiaridade</em></li>
               <li><span>Python</span><em>básico</em></li>
-              <li><span>HTML</span><em>familiaridade</em></li>
-              <li><span>CSS</span><em>familiaridade</em></li>
+              <li><span>HTML</span><em></em></li>
+              <li><span>CSS</span><em></em></li>
             </ul>
           </div>
-
           <div class="tech-card">
             <h3>Frameworks & Bibliotecas</h3>
             <ul class="tech-list">
@@ -301,38 +211,31 @@
               <li><span>Streamlit</span><em>familiaridade</em></li>
             </ul>
           </div>
-
           <div class="tech-card">
             <h3>Banco de Dados</h3>
             <ul class="tech-list">
-              <li><span>MySQL</span><em>familiaridade</em></li>
-              <li><span>SQLite</span><em>estudando</em></li>
-              <li><span>PostgreSQL</span><em>estudando</em></li>
+              <li><span>MySQL</span><em></em></li>
+              <li><span>SQLite</span><em>familiaridade</em></li>
+              <li><span>PostgreSQL</span><em>familiaridade</em></li>
             </ul>
           </div>
-
           <div class="tech-card">
             <h3>Ferramentas</h3>
             <ul class="tech-list">
-              <li><span>Git</span><em>familiaridade</em></li>
-              <li><span>GitHub</span><em>familiaridade</em></li>
-              <li><span>VS Code</span><em>familiaridade</em></li>
+              <li><span>Git</span><em></em></li>
+              <li><span>GitHub</span><em></em></li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ============================================================
-         TELA FORMAÇÃO
-         ============================================================ -->
     <section id="tela-formacao" class="xbox-screen screen-content" aria-label="Formação" hidden>
       <div class="content-shell">
         <header class="content-head">
           <h2 class="content-title">Formação</h2>
           <button class="btn-back" data-back type="button" aria-label="Voltar">voltar</button>
         </header>
-
         <ol class="timeline">
           <li class="timeline-item">
             <span class="timeline-dot"></span>
@@ -342,7 +245,6 @@
               <p>Primeiro período. Base em matemática, processos e otimização.</p>
             </div>
           </li>
-
           <li class="timeline-item">
             <span class="timeline-dot"></span>
             <div class="timeline-body">
@@ -351,7 +253,6 @@
               <p>Programação, banco de dados, web, lógica e orientação a objetos.</p>
             </div>
           </li>
-
           <li class="timeline-item">
             <span class="timeline-dot"></span>
             <div class="timeline-body">
@@ -360,7 +261,6 @@
               <p>Fundamentos de análise de dados, planilhas, SQL e visualização.</p>
             </div>
           </li>
-
           <li class="timeline-item">
             <span class="timeline-dot"></span>
             <div class="timeline-body">
@@ -373,16 +273,12 @@
       </div>
     </section>
 
-    <!-- ============================================================
-         TELA HABILIDADES
-         ============================================================ -->
     <section id="tela-habilidades" class="xbox-screen screen-content" aria-label="Habilidades" hidden>
       <div class="content-shell">
         <header class="content-head">
           <h2 class="content-title">Habilidades</h2>
           <button class="btn-back" data-back type="button" aria-label="Voltar">voltar</button>
         </header>
-
         <div class="skills-grid">
           <div class="skill-card">
             <h3>Otimização de Processos</h3>
@@ -408,116 +304,112 @@
       </div>
     </section>
 
-    <!-- ============================================================
-         TELA CONTATO
-         ============================================================ -->
     <section id="tela-contato" class="xbox-screen screen-content" aria-label="Contato" hidden>
       <div class="content-shell">
         <header class="content-head">
           <h2 class="content-title">Contato</h2>
           <button class="btn-back" data-back type="button" aria-label="Voltar">voltar</button>
         </header>
-
         <div class="contact-grid">
           <a class="contact-card" href="https://github.com/GusShard" target="_blank" rel="noopener noreferrer">
             <span class="contact-label">GitHub</span>
             <span class="contact-value">github.com/GusShard</span>
           </a>
-
           <a class="contact-card" href="https://www.linkedin.com/in/gustavo-paiva-laurindo-98b12b384" target="_blank" rel="noopener noreferrer">
             <span class="contact-label">LinkedIn</span>
             <span class="contact-value">gustavo-paiva-laurindo</span>
           </a>
-
           <a class="contact-card" href="mailto:gustavopaiva.contact@gmail.com">
             <span class="contact-label">E-mail</span>
             <span class="contact-value">gustavopaiva.contact@gmail.com</span>
           </a>
         </div>
-
-        <p class="contact-note">
-          Estou em busca da minha primeira oportunidade em TI — estágio ou posição júnior.
-          Aberto a conversas, feedback e projetos em conjunto.
-        </p>
+        <p class="contact-note">Estou em busca da minha primeira oportunidade em TI — estágio ou posição júnior. Aberto a conversas, feedback e projetos em conjunto.</p>
       </div>
     </section>
 
-    <!-- ============================================================
-         TELA SOCIAL (placeholder visual, mantém fidelidade com abas do 360)
-         ============================================================ -->
-    <section id="tela-social" class="xbox-screen screen-content" aria-label="Social" hidden>
-      <div class="content-shell">
-        <header class="content-head">
-          <h2 class="content-title">Social</h2>
-          <button class="btn-back" data-back type="button" aria-label="Voltar">voltar</button>
-        </header>
-        <p class="content-empty">Em breve.</p>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         TELA BUSCA (placeholder visual)
-         ============================================================ -->
     <section id="tela-busca" class="xbox-screen screen-content" aria-label="Busca" hidden>
       <div class="content-shell">
         <header class="content-head">
           <h2 class="content-title">Busca</h2>
           <button class="btn-back" data-back type="button" aria-label="Voltar">voltar</button>
         </header>
-        <p class="content-empty">Em breve.</p>
+        <div class="tech-grid">
+          <div class="tech-card">
+            <h3>Navegação rápida</h3>
+            <ul class="tech-list">
+              <li><span>Projetos</span><em>o que estou construindo</em></li>
+              <li><span>Tecnologias</span><em>stack atual</em></li>
+              <li><span>Formação</span><em>cursos e graduação</em></li>
+              <li><span>Contato</span><em>onde me encontrar</em></li>
+            </ul>
+          </div>
+          <div class="tech-card">
+            <h3>Atalhos de teclado</h3>
+            <ul class="tech-list">
+              <li><span>← → ↑ ↓</span><em>navegar</em></li>
+              <li><span>Enter</span><em>abrir</em></li>
+              <li><span>Esc</span><em>voltar</em></li>
+            </ul>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- ============================================================
-         TELA CONFIGURAÇÕES (placeholder visual)
-         ============================================================ -->
     <section id="tela-config" class="xbox-screen screen-content" aria-label="Configurações" hidden>
       <div class="content-shell">
         <header class="content-head">
           <h2 class="content-title">Configurações</h2>
           <button class="btn-back" data-back type="button" aria-label="Voltar">voltar</button>
         </header>
-        <p class="content-empty">Em breve.</p>
+        <div class="tech-grid">
+          <div class="tech-card">
+            <h3>Aparência</h3>
+            <ul class="tech-list">
+              <li><span>Tema</span><em>escuro / claro</em></li>
+            </ul>
+            <p style="margin-top: 12px; font-size: 13px; color: var(--text-secondary);">
+              Use o botão <strong>Ⓧ Aparência</strong> no rodapé pra alternar entre tema escuro e claro.
+            </p>
+          </div>
+          <div class="tech-card">
+            <h3>Sobre este site</h3>
+            <ul class="tech-list">
+              <li><span>Estilo</span><em>Xbox 360 Metro</em></li>
+              <li><span>Stack</span><em>HTML, CSS, JS</em></li>
+              <li><span>Hospedagem</span><em>GitHub Pages</em></li>
+            </ul>
+          </div>
+        </div>
       </div>
     </section>
 
   </main>
 
-  <!-- ============================================================
-       RODAPÉ — botões de ação estilo controle Xbox (Ⓐ Ⓑ Ⓧ Ⓨ)
-       ============================================================ -->
   <footer class="xbox-footer" role="contentinfo">
     <button class="ctrl-btn" data-action="select" type="button">
       <span class="ctrl-key ctrl-a">A</span>
       <span class="ctrl-label">Selecionar</span>
     </button>
-
     <button class="ctrl-btn" data-action="back" type="button">
       <span class="ctrl-key ctrl-b">B</span>
       <span class="ctrl-label">Voltar</span>
     </button>
-
     <button class="ctrl-btn" data-action="theme" type="button">
       <span class="ctrl-key ctrl-x">X</span>
       <span class="ctrl-label">Aparência</span>
     </button>
-
     <button class="ctrl-btn" data-action="top" type="button">
       <span class="ctrl-key ctrl-y">Y</span>
       <span class="ctrl-label">Início</span>
     </button>
-
     <div class="footer-meta">
       <span class="footer-year">© <span id="ano-atual">2026</span> Gustavo Paiva Laurindo</span>
     </div>
   </footer>
 
-  <!-- Botão de voltar ao topo (aparece apenas em telas com scroll) -->
-  <button id="btn-topo" class="btn-topo" type="button" aria-label="Voltar ao topo" hidden>
-    ↑ topo
-  </button>
+  <button id="btn-topo" class="btn-topo" type="button" aria-label="Voltar ao topo" hidden>↑ topo</button>
 
-  <!-- JavaScript principal -->
   <script src="assets/js/main.js"></script>
 </body>
 </html>

@@ -1,14 +1,9 @@
 /* ============================================================
    PORTFÓLIO — ESTILO XBOX 360 METRO (2010)
    Arquivo: assets/css/style.css
-   Complementa o Tailwind com identidade visual fiel ao dashboard.
    ============================================================ */
 
-/* ------------------------------------------------------------
-   1. VARIÁVEIS GLOBAIS
-   ------------------------------------------------------------ */
 :root {
-  /* Fundo cinza-prateado do dashboard Metro */
   --bg-1: #3a4045;
   --bg-2: #2a2f33;
   --bg-3: #1c2023;
@@ -19,41 +14,26 @@
       #22272b 75%,
       #181c1f 100%
     );
-
-  /* Superfícies (blocos, cards) */
   --surface-gray: #6b7078;
   --surface-gray-dark: #4a4f55;
   --surface-green: #107c10;
   --surface-green-dark: #0a5a0a;
   --surface-blue: #2c5b8a;
-
-  /* Cores de destaque */
   --xbox-green: #107c10;
   --xbox-green-bright: #9bf00b;
   --xbox-green-glow: rgba(155, 240, 11, 0.55);
-
-  /* Texto */
   --text-primary: #f1f3f1;
   --text-secondary: #b8beb9;
   --text-dim: #82887f;
-
-  /* Botões do controle */
   --btn-a: #4caf50;
   --btn-b: #d63a3a;
   --btn-x: #2f7fd6;
   --btn-y: #e0b800;
-
-  /* Transições */
   --ease-xbox: cubic-bezier(0.22, 0.61, 0.36, 1);
-
-  /* Fontes */
   --font-xbox: "Segoe UI", "Inter", -apple-system, BlinkMacSystemFont,
     "Helvetica Neue", Arial, sans-serif;
 }
 
-/* ------------------------------------------------------------
-   2. RESET LEVE E BASE
-   ------------------------------------------------------------ */
 *,
 *::before,
 *::after {
@@ -74,24 +54,18 @@ body.xbox-body {
   background-attachment: fixed;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  /* Layout em coluna: header fixo / palco / footer fixo */
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   overflow-x: hidden;
 }
 
-/* Foco visível e acessível (não remove outline) */
 :focus-visible {
   outline: 2px solid var(--xbox-green-bright);
   outline-offset: 3px;
   border-radius: 2px;
 }
 
-/* ------------------------------------------------------------
-   3. SCROLLBAR CUSTOMIZADA
-   ------------------------------------------------------------ */
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;
@@ -109,14 +83,13 @@ body.xbox-body {
 }
 
 /* ------------------------------------------------------------
-   4. BARRA SUPERIOR (HEADER)
+   BARRA SUPERIOR
    ------------------------------------------------------------ */
 .xbox-topbar {
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
   gap: 20px;
-
   padding: 14px 28px;
   background: linear-gradient(
     180deg,
@@ -125,31 +98,18 @@ body.xbox-body {
   );
   backdrop-filter: blur(6px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-
   position: sticky;
   top: 0;
   z-index: 50;
 }
 
-/* Avatar pequeno no canto esquerdo */
-.topbar-avatar {
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  overflow: hidden;
-  background: rgba(255, 255, 255, 0.08);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.topbar-avatar img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  object-position: center top;
+/* Espaço vazio à esquerda (no lugar do antigo avatar mini) */
+.topbar-spacer {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
 }
 
-/* Abas horizontais */
 .topbar-tabs {
   display: flex;
   gap: 4px;
@@ -181,7 +141,6 @@ body.xbox-body {
   font-weight: 400;
 }
 
-/* Gamertag no canto direito */
 .topbar-gamertag {
   display: flex;
   align-items: center;
@@ -204,26 +163,30 @@ body.xbox-body {
   font-weight: 600;
   color: #fff;
 }
+
+/* Avatar do canto superior direito (só o rosto) */
 .gamertag-avatar {
-  width: 40px;
-  height: 40px;
-  border-radius: 4px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
   overflow: hidden;
   background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
 }
 .gamertag-avatar img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  object-position: center top;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
 /* ------------------------------------------------------------
-   5. PALCO PRINCIPAL (STAGE)
+   PALCO PRINCIPAL
    ------------------------------------------------------------ */
 .xbox-stage {
   flex: 1;
@@ -233,7 +196,6 @@ body.xbox-body {
   overflow: hidden;
 }
 
-/* Todas as telas ficam sobrepostas; só a ativa é visível */
 .xbox-screen {
   display: none;
   width: 100%;
@@ -255,7 +217,7 @@ body.xbox-body {
 }
 
 /* ------------------------------------------------------------
-   6. TELA INICIAL — BLOCOS METRO
+   TELA INICIAL — GRID
    ------------------------------------------------------------ */
 #tela-inicial {
   display: none;
@@ -270,7 +232,6 @@ body.xbox-body {
   display: grid;
 }
 
-/* Colunas laterais */
 .metro-col {
   display: flex;
   flex-direction: column;
@@ -279,35 +240,31 @@ body.xbox-body {
   justify-content: center;
 }
 
-/* Bloco Metro (tile) */
+/* ------------------------------------------------------------
+   BLOCOS METRO
+   ------------------------------------------------------------ */
 .metro-tile {
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
-
   padding: 16px 14px;
   min-height: 110px;
-
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 3px;
-
   cursor: pointer;
   font-family: inherit;
   color: #fff;
   text-align: left;
-
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35),
     inset 0 1px 0 rgba(255, 255, 255, 0.14);
-
   transition: transform 0.22s var(--ease-xbox),
     box-shadow 0.22s var(--ease-xbox),
     border-color 0.22s var(--ease-xbox);
   overflow: hidden;
 }
 
-/* Reflexo tipo "vidro" na parte superior do tile */
 .metro-tile::before {
   content: "";
   position: absolute;
@@ -321,7 +278,6 @@ body.xbox-body {
   pointer-events: none;
 }
 
-/* Cores dos tiles */
 .tile-gray {
   background: linear-gradient(
     160deg,
@@ -344,7 +300,6 @@ body.xbox-body {
   );
 }
 
-/* Hover / foco — borda verde, brilho e leve escala */
 .metro-tile:hover,
 .metro-tile:focus-visible,
 .metro-tile.is-focused {
@@ -356,7 +311,6 @@ body.xbox-body {
   z-index: 2;
 }
 
-/* Ícone dentro do tile */
 .tile-icon {
   width: 30px;
   height: 30px;
@@ -368,7 +322,6 @@ body.xbox-body {
   height: 100%;
 }
 
-/* Rótulo do tile */
 .tile-label {
   font-size: 14px;
   font-weight: 400;
@@ -377,7 +330,7 @@ body.xbox-body {
 }
 
 /* ------------------------------------------------------------
-   7. AVATAR CENTRAL
+   AVATAR CENTRAL
    ------------------------------------------------------------ */
 .metro-col-center {
   display: flex;
@@ -398,7 +351,6 @@ body.xbox-body {
   justify-content: center;
 }
 
-/* Halo sutil de fundo atrás do avatar */
 .avatar-stage::before {
   content: "";
   position: absolute;
@@ -425,8 +377,7 @@ body.xbox-body {
 }
 
 @keyframes avatar-idle {
-  0%,
-  100% {
+  0%, 100% {
     transform: translateY(0);
   }
   50% {
@@ -434,7 +385,6 @@ body.xbox-body {
   }
 }
 
-/* Nome e subtítulo embaixo do avatar */
 .avatar-caption {
   text-align: center;
   max-width: 90%;
@@ -454,7 +404,6 @@ body.xbox-body {
   letter-spacing: 0.6px;
 }
 
-/* Dica de navegação abaixo dos tiles */
 .screen-hint {
   grid-column: 1 / -1;
   display: flex;
@@ -478,7 +427,7 @@ body.xbox-body {
 }
 
 /* ------------------------------------------------------------
-   8. TELAS INTERNAS (SOBRE, PROJETOS, ETC.)
+   TELAS INTERNAS
    ------------------------------------------------------------ */
 .screen-content {
   animation: screen-in 0.45s var(--ease-xbox) both;
@@ -509,7 +458,6 @@ body.xbox-body {
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
 }
 
-/* Botão voltar */
 .btn-back {
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.16);
@@ -531,7 +479,7 @@ body.xbox-body {
 }
 
 /* ------------------------------------------------------------
-   9. CARDS DE CONTEÚDO (Sobre)
+   CARDS DE CONTEÚDO
    ------------------------------------------------------------ */
 .content-grid {
   display: grid;
@@ -581,7 +529,7 @@ body.xbox-body {
 }
 
 /* ------------------------------------------------------------
-   10. CARDS DE PROJETO
+   PROJETOS
    ------------------------------------------------------------ */
 .project-card {
   background: linear-gradient(
@@ -663,7 +611,6 @@ body.xbox-body {
   color: var(--text-secondary);
 }
 
-/* Tags de tecnologias */
 .tag-list {
   list-style: none;
   margin: 0;
@@ -711,7 +658,7 @@ body.xbox-body {
 }
 
 /* ------------------------------------------------------------
-   11. GRID DE TECNOLOGIAS
+   TECNOLOGIAS
    ------------------------------------------------------------ */
 .tech-grid {
   display: grid;
@@ -765,7 +712,7 @@ body.xbox-body {
 }
 
 /* ------------------------------------------------------------
-   12. TIMELINE (Formação)
+   TIMELINE
    ------------------------------------------------------------ */
 .timeline {
   list-style: none;
@@ -825,7 +772,7 @@ body.xbox-body {
 }
 
 /* ------------------------------------------------------------
-   13. GRID DE HABILIDADES
+   HABILIDADES
    ------------------------------------------------------------ */
 .skills-grid {
   display: grid;
@@ -863,7 +810,7 @@ body.xbox-body {
 }
 
 /* ------------------------------------------------------------
-   14. CONTATO
+   CONTATO
    ------------------------------------------------------------ */
 .contact-grid {
   display: grid;
@@ -920,14 +867,13 @@ body.xbox-body {
 }
 
 /* ------------------------------------------------------------
-   15. RODAPÉ — BOTÕES DE CONTROLE
+   RODAPÉ — CONTROLE
    ------------------------------------------------------------ */
 .xbox-footer {
   display: flex;
   align-items: center;
   gap: 22px;
   flex-wrap: wrap;
-
   padding: 12px 28px;
   background: linear-gradient(
     0deg,
@@ -936,7 +882,6 @@ body.xbox-body {
   );
   backdrop-filter: blur(6px);
   border-top: 1px solid rgba(255, 255, 255, 0.07);
-
   position: sticky;
   bottom: 0;
   z-index: 40;
@@ -959,7 +904,6 @@ body.xbox-body {
   color: #fff;
 }
 
-/* Círculo colorido do botão do controle */
 .ctrl-key {
   display: inline-flex;
   align-items: center;
@@ -991,7 +935,6 @@ body.xbox-body {
   letter-spacing: 0.6px;
 }
 
-/* Metadados do rodapé */
 .footer-meta {
   margin-left: auto;
   font-size: 11px;
@@ -1000,7 +943,7 @@ body.xbox-body {
 }
 
 /* ------------------------------------------------------------
-   16. BOTÃO VOLTAR AO TOPO
+   BOTÃO VOLTAR AO TOPO
    ------------------------------------------------------------ */
 .btn-topo {
   position: fixed;
@@ -1027,10 +970,8 @@ body.xbox-body {
 }
 
 /* ------------------------------------------------------------
-   17. RESPONSIVIDADE
+   RESPONSIVIDADE
    ------------------------------------------------------------ */
-
-/* Tablets e notebooks pequenos */
 @media (max-width: 1024px) {
   #tela-inicial {
     grid-template-columns: minmax(120px, 160px) 1fr minmax(120px, 160px);
@@ -1048,12 +989,15 @@ body.xbox-body {
   }
 }
 
-/* Tablets em pé e celulares grandes */
 @media (max-width: 768px) {
   .xbox-topbar {
     grid-template-columns: auto 1fr auto;
     padding: 10px 14px;
     gap: 10px;
+  }
+  .topbar-spacer {
+    width: 34px;
+    height: 34px;
   }
   .topbar-tabs {
     gap: 2px;
@@ -1073,6 +1017,10 @@ body.xbox-body {
   }
   .gamertag-label {
     display: none;
+  }
+  .gamertag-avatar {
+    width: 34px;
+    height: 34px;
   }
 
   #tela-inicial {
@@ -1125,15 +1073,10 @@ body.xbox-body {
   }
 }
 
-/* Celulares pequenos */
 @media (max-width: 480px) {
-  .topbar-avatar {
-    width: 28px;
-    height: 28px;
-  }
   .gamertag-avatar {
-    width: 34px;
-    height: 34px;
+    width: 30px;
+    height: 30px;
   }
   .gamertag-name {
     font-size: 14px;
@@ -1163,7 +1106,7 @@ body.xbox-body {
 }
 
 /* ------------------------------------------------------------
-   18. PREFERÊNCIA POR MENOS MOVIMENTO
+   ACESSIBILIDADE
    ------------------------------------------------------------ */
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -1176,7 +1119,7 @@ body.xbox-body {
 }
 
 /* ------------------------------------------------------------
-   19. TEMA CLARO (ativado pelo botão X do rodapé)
+   TEMA CLARO
    ------------------------------------------------------------ */
 body.tema-claro {
   --bg-gradient: radial-gradient(
